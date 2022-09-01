@@ -1,2 +1,15 @@
-# kxmail
-KxMail is a windows app I designed for creating free email aliases (sorry non-windows users). For anyone who's interested in using the API, I will leave a JS file to copy the code from.
+# KxMail
+KxMail is a windows app I designed for creating free email aliases (sorry non-windows users). For anyone who's interested in using the API directly, I will leave a JS file to copy the request code from.
+
+# How to use
+While designing this tool, I tried to make it as simple as possible so that there isn't any confusion about how to create and manage your own aliases. First off, the main menu will list any aliases that you currently have saved to your computer. Note that all alias data is saved locally, so if you delete the application then you will also lose your aliases if you don't have a backup. To back up your alias data, select "download alias file" and choose where you want the backup file to be downloaded. At any time, you can load a backup file by selecting "upload alias file" and typing in the path to your backup file. Upon loading a file, all aliases will be appended, so if you have some already on your machine then it will simply add the ones from the file.
+
+To create and delete your aliases, you can move across the top navigation bar. To get a list of valid domains for your aliases (ex. name@doma.in) you can go to the valid domains tab. Note that for each new email you redirect to, there will be a required verification process. This is only needed once, then you will be able to add as many aliases as you want under that email.
+
+# How it works
+I thought I'd include this section just to give a little insight on how this tool actually works, possibly enough to make your own email alias tool. The domains are all provided using freenom.com, so there is no money involved in getting ahold of the available domains. The domains are all hosted on Cloudflare's DNS (free plan), allowing me to add the necessary records to use Cloudflare's email alias feature. To keep the domains up and running, I designed an automatic email sender to send emails to email aliases designed to discard anything sent to them. This allows each domain to receive enough "visits" to not get taken off my account. Next, I simply hosted my API server and created each endpoint to receive and send data through Cloudflare's API. To create the app itself, I used Electron to convert my JavaScript, HTML, and CSS into a functioning executable.
+
+# Conclusion 
+Conclusively, these steps allowed me to create an email alias service completely for free. Because of all the different email alias services out there who either charge you, flood you with ads, or even do both, I just thought to make a tool that doesn't have any strings attached and can make email aliases more accessible to everybody. Again, sorry to those users who don't use Windows. I'll provide the API so that others can make cross-platform apps if desired.
+
+If you have any questions for me or you wish to make a request for my application, you can either contact me via email or via Discord. All of my domains have an alias named "kaliya", so contacting me through email should be pretty easy. If you want to contact me through Discord, my ID is 993078025669333064 (you can get my tag at https://discord.id).
